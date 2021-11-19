@@ -12,6 +12,7 @@ VALUES
     ('Wycliff Odiwor', 3500), 
     ('Anne Wanjiru', 10000);
 
+--Query to display the 3rd highest salary.
 SELECT * FROM 
 (SELECT employee_name, salary, DENSE_RANK() OVER (ORDER BY salary DESC) salary_rank FROM employee) third_highest_salary
 WHERE salary_rank = 3;
